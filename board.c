@@ -6,7 +6,7 @@
 /*   By: hamezoua <amouzwarh+1@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 21:52:16 by hamezoua          #+#    #+#             */
-/*   Updated: 2026/07/12 15:55:23 by hamezoua         ###   ########.fr       */
+/*   Updated: 2026/07/12 15:56:40 by hamezoua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ SquareInfo **board_create(SquareInfo **board)
 void free_board(t_board *board)
 {
     int     i;
-
+d
     i = 0;
     while(i < 8)
     {
