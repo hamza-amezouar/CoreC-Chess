@@ -6,9 +6,10 @@
 /*   By: hamezoua <amouzwarh+1@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 21:52:16 by hamezoua          #+#    #+#             */
-/*   Updated: 2026/07/11 23:18:27 by hamezoua         ###   ########.fr       */
+/*   Updated: 2026/07/12 15:55:23 by hamezoua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "square.h"
 #include "board.h"
@@ -29,13 +30,28 @@ SquareInfo **board_create(SquareInfo **board)
     return board;
 }
 
+void free_board(t_board *board)
+{
+    int     i;
+
+    i = 0;
+    while(i < 8)
+    {
+        free(board->board[i]);
+        i++;
+    }
+    free(board->board);
+    free(board);
+}
+
 int     main(void)
 {
     t_board *board;
     board = malloc(sizeof(t_board));
     board->board = board_create(board->board);
-    board->board[0][0].p_color = White;
-    board->board[0][0].Type = King;
-    printf("%d", board->board[0][0].p_color);
+    init_board(board);
+    free_board(board);
+    
+    
     return (0);
 }

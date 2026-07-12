@@ -1,7 +1,7 @@
 name = board
 flags = -Wall -Wextra -Werror
 
-files = board.c 
+files = board.c board_init.c
 
 o_file = $(files:.c=.o)
 

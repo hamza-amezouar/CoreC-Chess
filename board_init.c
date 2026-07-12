@@ -1,46 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   square.h                                           :+:      :+:    :+:   */
+/*   board_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hamezoua <amouzwarh+1@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/11 20:56:51 by hamezoua          #+#    #+#             */
-/*   Updated: 2026/07/12 15:41:19 by hamezoua         ###   ########.fr       */
+/*   Created: 2026/07/12 15:29:47 by hamezoua          #+#    #+#             */
+/*   Updated: 2026/07/12 15:54:14 by hamezoua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BOARD_C
-#define BOARD_C
+#include "square.h"
+#include "board.h"
 
-// Type of pieces
-typedef enum piece_type
+// static int init_white(t_board *board)
+// {
+    
+// }
+
+void    init_board(t_board *board)
 {
-    Empty,
-    Pawn,
-    Rook,
-    Bishop,
-    Knights,
-    Queen,
-    King
-}Piecetype;
-
-// Color of pieces
-typedef enum piece_color
-{
-    None,
-    White,
-    Black
-}Piece_color;
-
-
-// struct of squere 
-typedef struct square_info
-{
-    Piecetype Type;
-    Piece_color p_color;
-}SquareInfo;
-
-
-void    init_board(t_board *board);
-#endif
+    int     row;
+    int     col;
+    
+    row = 0;
+    while(row < 8)
+    {
+        col = 0;
+        while(col < 8)
+        {
+            board->board[row][col].p_color = None;
+            board->board[row][col].Type = Empty;
+            col++;
+        }
+        row++;
+    }
+}
