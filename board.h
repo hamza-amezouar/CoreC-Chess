@@ -6,7 +6,7 @@
 /*   By: hamezoua <amouzwarh+1@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 21:52:51 by hamezoua          #+#    #+#             */
-/*   Updated: 2026/07/12 15:55:36 by hamezoua         ###   ########.fr       */
+/*   Updated: 2026/07/12 18:32:40 by hamezoua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "square.h"
-
 typedef struct s_board
 {
     SquareInfo **board;

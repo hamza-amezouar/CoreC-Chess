@@ -6,7 +6,7 @@
 /*   By: hamezoua <amouzwarh+1@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 20:56:51 by hamezoua          #+#    #+#             */
-/*   Updated: 2026/07/12 15:41:19 by hamezoua         ###   ########.fr       */
+/*   Updated: 2026/07/12 18:36:17 by hamezoua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,4 @@ typedef struct square_info
 }SquareInfo;
 
 
-void    init_board(t_board *board);
 #endif

@@ -6,7 +6,7 @@
 /*   By: hamezoua <amouzwarh+1@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 21:52:16 by hamezoua          #+#    #+#             */
-/*   Updated: 2026/07/12 15:56:47 by hamezoua         ###   ########.fr       */
+/*   Updated: 2026/07/13 11:50:57 by hamezoua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,28 @@ void free_board(t_board *board)
 int     main(void)
 {
     t_board *board;
+    int     row;
+    int     col;
     board = malloc(sizeof(t_board));
     board->board = board_create(board->board);
     init_board(board);
+    while(1)
+    {
+        row = 0;
+        while(row < 8)
+        {
+            col = 0;
+            printf("______________________________________________________________________\n");
+            while(col < 8)
+            {
+                printf("|  %d  |  ", board->board[row][col].p_color);
+                col++;
+            }
+            printf("\n______________________________________________________________________\n");
+            row++;
+        }
+        break;
+    }
     free_board(board);
     
     

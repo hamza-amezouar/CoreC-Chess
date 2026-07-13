@@ -3,6 +3,8 @@ flags = -Wall -Wextra -Werror
 
 files = board.c board_init.c
 
+header_files = board.h square.h
+
 o_file = $(files:.c=.o)
 
 all: $(name)
@@ -10,7 +12,7 @@ all: $(name)
 $(name): $(o_file)
 	@cc $(flags) $(o_file) -o $(name)
 
-%.o: %.c board.h
+%.o: %.c $(header_files)
 	@cc $(flage) -c $< -o $@
 
 clean:
