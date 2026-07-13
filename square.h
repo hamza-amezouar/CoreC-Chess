@@ -6,7 +6,7 @@
 /*   By: hamezoua <amouzwarh+1@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 20:56:51 by hamezoua          #+#    #+#             */
-/*   Updated: 2026/07/12 18:36:17 by hamezoua         ###   ########.fr       */
+/*   Updated: 2026/07/13 20:46:20 by hamezoua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef enum piece_type
     Pawn,
     Rook,
     Bishop,
-    Knights,
+    Knight,
     Queen,
     King
 }Piecetype;
