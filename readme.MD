@@ -1,1 +1,1 @@
-![Chess Board](/home/hamza/CoreC-Chess/chess-ui/images/readmeimages/Screenshot From 2026-07-19 07-20-53.png)
+![Chess Board](/chess-ui/images/readmeimages/Screenshot%20From%202026-07-19%2007-20-53.png)
