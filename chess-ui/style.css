@@ -1,0 +1,74 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: #121a23;
+}
+body .container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 500px;
+    margin-top: 30px;
+    width: 650px;
+    height: 700px;
+}
+
+body .container .user1, .user2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+}
+body .container .user_info{
+    display: flex;
+
+}
+body .container .user1 img, .user2 img{
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border: 2px solid  #bfc4cb;
+    border-radius: 10px;
+}
+
+body .container .sub_info{
+    display: grid;
+    margin-left: 10px;
+}
+body .container .name_elo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+body .container .name_elo h4{
+    color: white;
+}
+body .container .name_elo h5{
+    color: #a7a7a7;
+}
+body .container .rank h4{
+    color: #bfc4cb;
+    font-size: 13px;
+}
+
+body .container .user1 .time,.user2 .time{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 45px;
+    border: 2px solid  #bfc4cb;
+    color: white;
+    border-radius: 10px;
+}
+
+body .board{
+    background-color: rgb(98, 98, 98);
+    width: 100%;
+    flex: 1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
