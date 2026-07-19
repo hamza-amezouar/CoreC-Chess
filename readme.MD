@@ -1,0 +1,1 @@
+![Chess Board](/home/hamza/Pictures/Screenshots/Screenshot From 2026-07-19 07-20-53.png)

@@ -13,6 +13,7 @@ body .container{
     margin-top: 30px;
     width: 575px;
     height: 500px;
+    user-select: none;
 }
 
 body .container .user1, .user2{
@@ -72,16 +73,26 @@ body .board{
     margin-bottom: 10px;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
+    border: 2px solid red;
 }
 body .board .square{
     width: 100%;
     aspect-ratio: 1;
     position: relative;
 }
+.square img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.square img:hover{
+    cursor: grab;
+}
 body .board .square h3{
     display: flex;
-    margin-left: 55px;
-    margin-top: 47px;
+    margin-left: 58px;
+    margin-top: 50px;
     position: absolute;
 }
 body .board .square p{
@@ -91,3 +102,4 @@ body .board .square p{
     font-size: 18px;
     font-weight: bold;
 }
+
