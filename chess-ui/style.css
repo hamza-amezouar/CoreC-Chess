@@ -9,10 +9,10 @@ body{
 body .container{
     display: flex;
     flex-direction: column;
-    margin-left: 500px;
+    margin-left: 400px;
     margin-top: 30px;
-    width: 650px;
-    height: 700px;
+    width: 575px;
+    height: 500px;
 }
 
 body .container .user1, .user2{
@@ -66,9 +66,28 @@ body .container .user1 .time,.user2 .time{
 }
 
 body .board{
-    background-color: rgb(98, 98, 98);
     width: 100%;
     flex: 1;
     margin-top: 10px;
     margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+body .board .square{
+    width: 100%;
+    aspect-ratio: 1;
+    position: relative;
+}
+body .board .square h3{
+    display: flex;
+    margin-left: 55px;
+    margin-top: 47px;
+    position: absolute;
+}
+body .board .square p{
+    position: absolute;
+    margin-left: 3px;
+    margin-top: 3px;
+    font-size: 18px;
+    font-weight: bold;
 }
