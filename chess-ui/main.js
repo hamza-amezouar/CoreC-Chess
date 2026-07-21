@@ -73,7 +73,7 @@ function addPiece(row, col, image) {
 
     square.appendChild(piece);
 }
-draw_board();
+
 function insert_pieces()
 {
     addPiece(7, 0, "rock");
@@ -102,4 +102,5 @@ function insert_pieces()
         addPiece(1, bcol, "bpawn");
     }
 }
+draw_board();
 insert_pieces()
