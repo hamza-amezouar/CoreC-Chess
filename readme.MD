@@ -33,3 +33,13 @@ The UI is being built first, followed by the integration with the C engine using
 ## Goal
 
 The goal of this project is to build a complete chess game where all game logic is implemented in **C**, while the browser is responsible only for rendering the board and handling user interaction.
+
+## 🚀 What's Coming
+
+This project is more than just another chess application.
+
+I'm currently working on a feature that I haven't seen implemented in any chess platform. It is designed to make organizing and playing tournaments much easier, while improving the overall experience for players.
+
+I'm keeping the details private for now, but this feature will be one of the main goals of the project.
+
+Stay tuned. ♟️
