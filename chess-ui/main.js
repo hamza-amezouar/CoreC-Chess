@@ -1,8 +1,9 @@
 /** @type {HTMLDivElement} */
+const board = document.querySelector(".board");
+const square_array = [];
 function draw_board()
 {
 
-    const board = document.querySelector(".board");
     
     let color = 0;
     let row_number = 8;
@@ -53,14 +54,50 @@ function draw_board()
             if ((row + col) % 2 == 0)
             {
                 square.style.backgroundColor = "#ebecd0";
+                square.dataset.real_color = "#ebecd0";
             }
             else
             {
                 square.style.backgroundColor = "#739552";
+                square.dataset.real_color = "#739552";
             }
             
         }
     }
+}
+
+function defualt_square(){
+    for (square of square_array){
+        square.style.backgroundColor = square.dataset.real_color;
+    }
+}
+
+function events(){
+    for (let row = 0; row < 8;row++){
+        for (let col = 0;col < 8;col++){
+            const square = document.querySelector(`.square[data-row="${row}"][data-col="${col}"]`);
+            square.addEventListener("contextmenu", function(event){
+                event.preventDefault();
+                if (square_array.includes(square)){
+                    square.style.backgroundColor = square.dataset.real_color;
+                    const index = square_array.indexOf(square);
+                    if (index > -1) {
+                    square_array.splice(index, 1);
+                }
+                }
+                else
+                {
+                    if((row + col) % 2 == 0){
+                        event.currentTarget.style.backgroundColor = "#eb7e6a";
+                    }
+                    else
+                        event.currentTarget.style.backgroundColor = "#d36c51";
+                    square_array.push(square);
+                }
+            })
+        }
+    }
+    board.addEventListener("click", defualt_square)
 }
 
 function addPiece(row, col, image) {
@@ -103,4 +140,5 @@ function insert_pieces()
     }
 }
 draw_board();
-insert_pieces()
+insert_pieces();
+events();
