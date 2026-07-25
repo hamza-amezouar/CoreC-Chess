@@ -9,7 +9,7 @@ body{
 body .container{
     display: flex;
     flex-direction: column;
-    margin-left: 400px;
+    margin-left: 200px;
     margin-top: 30px;
     width: 575px;
     height: 500px;
@@ -66,7 +66,11 @@ body .container .user1 .time,.user2 .time{
     border-radius: 10px;
 }
 
-body .board{
+.game {
+    position: relative;
+}
+
+body .game .board{
     width: 100%;
     flex: 1;
     margin-top: 10px;
@@ -74,6 +78,18 @@ body .board{
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     border: 2px solid red;
+}
+
+.piecesLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.piecesLayer img {
+    position: absolute;
 }
 body .board .square{
     width: 100%;
@@ -84,7 +100,9 @@ body .board .square{
     display: block;
     width: 100%;
     height: 100%;
+    position: absolute;
     object-fit: contain;
+    z-index: 20;
 }
 .square img:hover{
     cursor: grab;

@@ -1,6 +1,12 @@
 /** @type {HTMLDivElement} */
-const board = document.querySelector(".board");
+const game = document.querySelector(".game");
+const board = document.querySelector(".game .board");
+const piecesLayer = document.querySelector(".game .piecesLayer");
 const square_array = [];
+let dragging = false;
+let selectedImage = null;
+let selectedPiece = null;
+let originalSquare = null;
 function draw_board()
 {
 
@@ -73,31 +79,63 @@ function defualt_square(){
 }
 
 function events(){
-    for (let row = 0; row < 8;row++){
-        for (let col = 0;col < 8;col++){
-            const square = document.querySelector(`.square[data-row="${row}"][data-col="${col}"]`);
-            square.addEventListener("contextmenu", function(event){
-                event.preventDefault();
-                if (square_array.includes(square)){
-                    square.style.backgroundColor = square.dataset.real_color;
-                    const index = square_array.indexOf(square);
-                    if (index > -1) {
-                    square_array.splice(index, 1);
-                }
-                }
-                else
-                {
-                    if((row + col) % 2 == 0){
-                        event.currentTarget.style.backgroundColor = "#eb7e6a";
-                    }
-                    else
-                        event.currentTarget.style.backgroundColor = "#d36c51";
-                    square_array.push(square);
-                }
-            })
+
+    game.addEventListener("contextmenu", function(event){
+
+        event.preventDefault();
+
+
+        const elements = document.elementsFromPoint(
+            event.clientX,
+            event.clientY
+        );
+
+
+        const square = elements.find(el => 
+            el.classList.contains("square")
+        );
+
+
+        if (!square) return;
+
+
+
+        if (square_array.includes(square)){
+
+            square.style.backgroundColor = square.dataset.real_color;
+
+
+            const index = square_array.indexOf(square);
+
+            if (index > -1){
+                square_array.splice(index, 1);
+            }
+
         }
-    }
-    board.addEventListener("click", defualt_square)
+        else{
+
+            const row = Number(square.dataset.row);
+            const col = Number(square.dataset.col);
+
+
+            if ((row + col) % 2 === 0){
+                square.style.backgroundColor = "#eb7e6a";
+            }
+            else{
+                square.style.backgroundColor = "#d36c51";
+            }
+
+
+            // نخزنوها
+            square_array.push(square);
+        }
+
+    });
+
+
+
+    game.addEventListener("click", defualt_square);
+
 }
 
 function addPiece(row, col, image) {
@@ -139,6 +177,7 @@ function insert_pieces()
         addPiece(1, bcol, "bpawn");
     }
 }
+
 draw_board();
 insert_pieces();
 events();
