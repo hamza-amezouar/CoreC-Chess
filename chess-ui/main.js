@@ -90,7 +90,6 @@ function events(){
             event.clientY
         );
 
-
         const square = elements.find(el => 
             el.classList.contains("square")
         );
@@ -126,7 +125,6 @@ function events(){
             }
 
 
-            // نخزنوها
             square_array.push(square);
         }
 
@@ -178,6 +176,40 @@ function insert_pieces()
     }
 }
 
+function piece_move(){
+    game.addEventListener('mousedown', function(event){
+        
+        console.log("mousedown")
+
+        const elements = document.elementsFromPoint(
+            event.clientX,
+            event.clientY
+        );
+
+        const square = elements.find(el => 
+            el.classList.contains("square")
+        );
+
+        if (!square) return;
+        selectedImage = square.querySelector('img')
+        if (!selectedImage) return;
+        img_width = selectedImage.width
+        img_height = selectedImage.height
+        piecesLayer.appendChild(selectedImage)
+        const rect = piecesLayer.getBoundingClientRect();
+        selectedImage.style.width = `${img_width}px`
+        selectedImage.style.height = `${img_height}px`
+        selectedImage.style.top = `${event.clientY - rect.top - (img_height / 2)}px`
+        selectedImage.style.left = `${event.clientX - rect.left - (img_width / 2)}px`
+        originalSquare = square
+
+    });
+    game.addEventListener("mousemove", function(event){
+        console.log("mousemove");
+        
+    })
+}
 draw_board();
 insert_pieces();
 events();
+piece_move()
