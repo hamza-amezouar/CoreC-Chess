@@ -7,6 +7,8 @@ let dragging = false;
 let selectedImage = null;
 let selectedPiece = null;
 let originalSquare = null;
+let img_top;
+let img_left;
 function draw_board()
 {
 
@@ -193,8 +195,11 @@ function piece_move(){
         if (!square) return;
         selectedImage = square.querySelector('img')
         if (!selectedImage) return;
-        img_width = selectedImage.width
-        img_height = selectedImage.height
+        let img_width = selectedImage.width
+        let img_height = selectedImage.height
+        const img_meta_data = selectedImage.getBoundingClientRect();
+        img_top = img_meta_data.top
+        img_left = img_meta_data.left
         piecesLayer.appendChild(selectedImage)
         const rect = piecesLayer.getBoundingClientRect();
         selectedImage.style.width = `${img_width}px`
@@ -202,12 +207,28 @@ function piece_move(){
         selectedImage.style.top = `${event.clientY - rect.top - (img_height / 2)}px`
         selectedImage.style.left = `${event.clientX - rect.left - (img_width / 2)}px`
         originalSquare = square
+        dragging = true
 
     });
-    game.addEventListener("mousemove", function(event){
+    document.addEventListener("mousemove", function(event){
         console.log("mousemove");
-        
-    })
+        if (!dragging) return;
+        const rect = piecesLayer.getBoundingClientRect();
+        const rect_game = game.getBoundingClientRect();
+        let img_width = selectedImage.width
+        let img_height = selectedImage.height
+        selectedImage.style.top = `${event.clientY - rect.top - (img_height / 2)}px`
+        selectedImage.style.left = `${event.clientX - rect.left - (img_width / 2)}px`
+    });
+    document.addEventListener("mouseup", function(){
+        console.log("mouseup")
+        if(!dragging) return;
+        dragging = false
+        image = piecesLayer.querySelector("img")
+        console.log(image.style.position)
+        originalSquare.appendChild(image)
+    });
+    
 }
 draw_board();
 insert_pieces();
