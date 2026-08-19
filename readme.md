@@ -1,4 +1,4 @@
-![Chess Board](/chess-ui/images/readmeimages/image copy.png)
+![Chess Board](/chess-ui/images/readmeimages/image2.png)
 ![Chess Board](/chess-ui/images/readmeimages/image.png)
 
 
