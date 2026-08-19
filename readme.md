@@ -1,4 +1,6 @@
 ![Chess Board](/chess-ui/images/readmeimages/Screenshot%20From%202026-07-19%2007-20-53.png)
+![Chess Board](/chess-ui/images/readmeimages/image.png)
+
 # ♟️ CoreC Chess
 
 A chess game built with **C** for the game engine and **HTML, CSS, and JavaScript** for the user interface.

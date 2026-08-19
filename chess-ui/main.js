@@ -180,7 +180,7 @@ function insert_pieces()
 
 function piece_move(){
     game.addEventListener('mousedown', function(event){
-        
+        event.preventDefault()
         console.log("mousedown")
 
         const elements = document.elementsFromPoint(
@@ -220,13 +220,33 @@ function piece_move(){
         selectedImage.style.top = `${event.clientY - rect.top - (img_height / 2)}px`
         selectedImage.style.left = `${event.clientX - rect.left - (img_width / 2)}px`
     });
-    document.addEventListener("mouseup", function(){
+    document.addEventListener("mouseup", function(event){
         console.log("mouseup")
         if(!dragging) return;
         dragging = false
+        console.log("")
         image = piecesLayer.querySelector("img")
         console.log(image.style.position)
+        const elements = document.elementsFromPoint(
+            event.clientX,
+            event.clientY
+        );
+
+        const square = elements.find(el => 
+            el.classList.contains("square")
+        );
+        if (square){
+            square_image = square.querySelector('img')
+            if(!square_image)
+            {
+                originalSquare = square
+            }
+        }
         originalSquare.appendChild(image)
+        selectedImage.style.top = "";
+        selectedImage.style.left = "";
+        selectedImage.style.width = "100%";
+        selectedImage.style.height = "100%";
     });
     
 }
