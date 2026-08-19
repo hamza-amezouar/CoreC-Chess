@@ -19,7 +19,7 @@ The UI is being built first, followed by the integration with the C engine using
 - ✅ Chess pieces rendering
 - ✅ Internal board representation in C
 - ✅ Board initialization
-- ⏳ Piece movement
+- ✅ Piece movement
 - ⏳ Chess rules validation
 - ⏳ WebAssembly integration
 - ⏳ Check / Checkmate detection
