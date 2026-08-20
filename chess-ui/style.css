@@ -9,7 +9,7 @@ body{
 body .container{
     display: flex;
     flex-direction: column;
-    margin-left: 200px;
+    margin-left: 400px;
     margin-top: 30px;
     width: 575px;
     height: 500px;
@@ -69,7 +69,10 @@ body .container .user1 .time,.user2 .time{
 .game {
     position: relative;
 }
-
+/* body .game{
+    background-color: aqua;
+    margi
+} */
 body .game .board{
     width: 100%;
     flex: 1;
@@ -94,6 +97,7 @@ body .game .board{
 
 .piecesLayer img {
     position: absolute;
+    z-index: 30;
 }
 .piecesLayer img:hover{
     cursor: grab;

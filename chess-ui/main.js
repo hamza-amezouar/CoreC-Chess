@@ -2,6 +2,7 @@
 const game = document.querySelector(".game");
 const board = document.querySelector(".game .board");
 const piecesLayer = document.querySelector(".game .piecesLayer");
+const moveSound = new Audio('../sounds/capture.mp3');
 const square_array = [];
 let dragging = false;
 let selectedImage = null;
@@ -178,6 +179,10 @@ function insert_pieces()
     }
 }
 
+function sound_effects(){
+    moveSound.currentTime = 0;
+    moveSound.play();
+}
 function piece_move(){
     game.addEventListener('mousedown', function(event){
         event.preventDefault()
@@ -219,6 +224,7 @@ function piece_move(){
         let img_height = selectedImage.height
         selectedImage.style.top = `${event.clientY - rect.top - (img_height / 2)}px`
         selectedImage.style.left = `${event.clientX - rect.left - (img_width / 2)}px`
+        
     });
     document.addEventListener("mouseup", function(event){
         console.log("mouseup")
@@ -239,6 +245,10 @@ function piece_move(){
             square_image = square.querySelector('img')
             if(!square_image)
             {
+                if (square != originalSquare)
+                {
+                    sound_effects()
+                }
                 originalSquare = square
             }
         }
